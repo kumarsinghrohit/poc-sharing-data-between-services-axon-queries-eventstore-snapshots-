@@ -1,0 +1,1 @@
+# poc-sharing-data-between-services-axon-queries-eventstore-snapshots-
