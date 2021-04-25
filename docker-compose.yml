@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  axonserver:
+    image: axoniq/axonserver:4.2.4-jdk11
+    environment:
+      - AXONSERVER_HOSTNAME=axonserver
+    ports:
+      - 8024:8024
+      - 8124:8124
+      
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+      
+networks:
+  default:
+    external:
+      name: my-application
+
